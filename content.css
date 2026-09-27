@@ -1,0 +1,39 @@
+.cacador-badge {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font: 600 12px/1.3 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  color: #1c1e21;
+  background: #f0f2f5;
+  border: 1px solid #dadde1;
+  cursor: default;
+}
+.cacador-badge[data-v="escalado"] { background: #fff1e6; border-color: #ff7a1a; }
+.cacador-badge[data-v="teste"]    { background: #eef6ff; border-color: #6aa7ff; }
+.cacador-badge[data-v="incerto"]  { background: #f5f5f5; border-color: #b0b3b8; }
+.cacador-badge[data-v="fora"]     { background: #f3f0ff; border-color: #9b87f5; }
+.cacador-badge[data-v="erro"]     { background: #fdecea; border-color: #f28b82; color: #7f1d1d; cursor: pointer; }
+.cacador-badge[data-v="loading"]  { color: #65676b; font-weight: 500 !important; }
+
+.cacador-verdict { font-size: 13px; }
+.cacador-angle,
+.cacador-niche,
+.cacador-cached {
+  background: rgba(255, 255, 255, .75);
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-weight: 500;
+}
+.cacador-dots { letter-spacing: 1px; color: #e4572e; }
+.cacador-pct { font-variant-numeric: tabular-nums; }
+.cacador-cached { color: #65676b; font-size: 11px; }
+.cacador-low { opacity: .55; font-style: italic; }
+
+/* chip de nicho ativo no painel: cards de outros nichos ficam apagados */
+[data-cacador-id] { transition: opacity .2s, filter .2s; }
+.cacador-dim { opacity: .18 !important; filter: grayscale(1); }
+.cacador-dim:hover { opacity: .6 !important; }

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Caçador de Anúncios",
+  "version": "1.0.0",
+  "description": "Classifica anúncios da Biblioteca de Anúncios da Meta com o JEV (TypeSafe) via OpenRouter Decisions.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://openrouter.ai/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Caçador de Anúncios — opções"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.facebook.com/ads/library*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

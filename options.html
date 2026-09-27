@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Caçador de Anúncios — Opções</title>
+  <style>
+    body { font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color: #1c1e21;
+           background: #f0f2f5; margin: 0; padding: 32px 16px; }
+    main { max-width: 520px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 24px;
+           box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    p.sub { color: #65676b; margin: 0 0 20px; }
+    label { display: block; font-weight: 600; margin: 16px 0 6px; }
+    input, textarea { width: 100%; box-sizing: border-box; padding: 9px 10px; border: 1px solid #ccd0d5;
+                      border-radius: 6px; font: inherit; }
+    textarea { min-height: 70px; resize: vertical; }
+    .hint { font-size: 12px; color: #65676b; margin-top: 4px; }
+    .row { display: flex; gap: 8px; margin-top: 20px; }
+    button { padding: 9px 16px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; }
+    #save { background: #1877f2; color: #fff; }
+    #clear { background: #e4e6eb; }
+    #status { margin-top: 12px; min-height: 20px; font-weight: 600; }
+    code { background: #f0f2f5; padding: 1px 4px; border-radius: 4px; }
+    .tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 6px; min-height: 40px;
+            box-sizing: border-box; border: 1px solid #ccd0d5; border-radius: 6px; cursor: text; }
+    .tags:focus-within { border-color: #1877f2; box-shadow: 0 0 0 2px rgba(24,119,242,.15); }
+    .tag { display: inline-flex; align-items: center; gap: 4px; background: #e7f0fd; color: #0b4db3;
+           border-radius: 999px; padding: 3px 4px 3px 10px; font-weight: 600; font-size: 13px; }
+    .tag button { border: 0; background: transparent; color: inherit; font-size: 15px; line-height: 1;
+                  padding: 0 5px; border-radius: 999px; cursor: pointer; }
+    .tag button:hover { background: rgba(11,77,179,.12); }
+    .tags input { flex: 1; min-width: 160px; border: 0; padding: 4px; outline: none; }
+    .tags input:disabled { background: transparent; }
+    .count { font-size: 12px; color: #65676b; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>🎯 Caçador de Anúncios</h1>
+    <p class="sub">Modelo <code>typesafe/jev-1.13</code> via rota Decisions do OpenRouter.</p>
+
+    <label for="key">Chave do OpenRouter</label>
+    <input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-or-...">
+    <div class="hint" id="keyState">Nenhuma chave salva.</div>
+    <div class="hint">Fica só no <code>chrome.storage.local</code> deste navegador. Deixe em branco para manter a atual.</div>
+
+    <label for="nicheInput">Meus nichos</label>
+    <div class="tags" id="tags">
+      <input id="nicheInput" autocomplete="off" placeholder="digite um nicho e aperte Enter">
+    </div>
+    <div class="count" id="count">0 de 3 nichos</div>
+    <div class="hint">Até 3, para não ficar ambíguo. Quanto mais específico, melhor (ex.: “cursos de IA para empreendedores”).
+      Salvo na hora. Mudar os nichos gera novas análises.</div>
+
+    <div class="row">
+      <button id="save">Salvar</button>
+      <button id="clear">Limpar cache de análises</button>
+    </div>
+    <div id="status"></div>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

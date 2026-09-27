@@ -1,0 +1,16 @@
+# Nunca versionar chaves ou arquivos de ambiente
+.env
+.env.*
+*.key
+*.pem
+secrets*
+
+# Pacotes gerados para a Chrome Web Store
+*.zip
+*.crx
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
